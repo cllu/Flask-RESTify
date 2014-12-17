@@ -10,10 +10,8 @@ Tests for `Flask-RESTify` module.
 
 import unittest
 
-from Flask-RESTify import Flask-RESTify
 
-
-class TestFlask-restify(unittest.TestCase):
+class FlaskRESTifyTest(unittest.TestCase):
 
     def setUp(self):
         pass

@@ -21,17 +21,16 @@ test_requirements = [
 
 setup(
     name='Flask-RESTify',
-    version='0.1.0',
+    version='0.1.1',
     description='Flask REST framework',
     long_description=readme + '\n\n' + history,
     author='Chunliang Lyu',
     author_email='hi@chunlianglyu.com',
     url='https://github.com/cllu/Flask-RESTify',
     packages=[
-        'Flask-RESTify',
+        'flask_restify',
     ],
-    package_dir={'Flask-RESTify':
-                 'Flask-RESTify'},
+    package_dir={'flask_restify': 'flask_restify'},
     include_package_data=True,
     install_requires=requirements,
     license="BSD",
