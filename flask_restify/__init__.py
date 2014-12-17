@@ -2,7 +2,7 @@
 
 __author__ = 'Chunliang Lyu'
 __email__ = 'hi@chunlianglyu.com'
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 from functools import wraps
 
@@ -10,6 +10,9 @@ from flask import request, url_for, current_app, make_response
 from json import dumps
 from flask.views import MethodView
 from werkzeug.wrappers import Response as ResponseBase
+
+
+__all__ = ('Api', 'Resource')
 
 
 def unpack(value):
@@ -31,7 +34,7 @@ def unpack(value):
 
     return value, 200, {}
 
-__all__ = ('Api', 'Resource')
+
 
 # This dictionary contains any kwargs that are to be passed to the json.dumps
 # function, used below.
