@@ -2,17 +2,17 @@
 
 __author__ = 'Chunliang Lyu'
 __email__ = 'hi@chunlianglyu.com'
-__version__ = '0.1.2'
+__version__ = '0.1.3'
+__all__ = ('Api', 'Resource', 'Packable', 'JSONEncoder')
 
 from functools import wraps
 
 from flask import request, url_for, current_app, make_response
-from json import dumps
 from flask.views import MethodView
 from werkzeug.wrappers import Response as ResponseBase
 
-
-__all__ = ('Api', 'Resource')
+from .jsons import JSONEncoder, dumps
+from .packable import Packable
 
 
 def unpack(value):
@@ -121,6 +121,7 @@ class Api(object):
 
         """
         self.app = app
+        app.json_encoder = JSONEncoder
         if len(self.resources) > 0:
             for resource, urls, kwargs in self.resources:
                 self._register_view(app, resource, *urls, **kwargs)
@@ -323,3 +324,4 @@ class Resource(MethodView):
                 return resp
 
         return resp
+
